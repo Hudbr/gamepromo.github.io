@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamePromo BR</title>
+    <meta name="description" content="GamePromo BR — Ofertas, jogos grátis e descontos para PC. Fique por dentro das melhores promoções da Steam e Epic Games.">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header class="site-header">
+            <div class="container">
+                <a class="brand" href="#">GamePromo BR</a>
+                <nav class="main-nav">
+                    <a href="#gratis">Jogos Grátis</a>
+                    <a href="#promocoes">Promoções</a>
+                    <a href="#noticias">Notícias</a>
+                    <a href="#contato">Contato</a>
+                    <button class="btn btn-ghost" id="themeToggle">Modo</button>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-left">
+                        <h1>Destaques da Semana</h1>
+                        <p class="lead">As melhores ofertas, jogos grátis e descontos imperdíveis para PC.</p>
+                        <div class="hero-actions">
+                            <a class="btn btn-primary" href="#promocoes">Ver Promoções</a>
+                            <a class="btn btn-outline" href="#gratis">Jogos Grátis Agora</a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-card">
+                            <h3>Oferta: Cyber Adventure</h3>
+                            <p>De R$199,90 por R$29,90 — Cupom: CYBER30</p>
+                            <a class="btn btn-ghost" href="#">Resgatar</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gratis" class="section">
+                <div class="container">
+                    <h2>Jogos Grátis Agora</h2>
+                    <div class="grid" id="freeGames">
+                        <!-- Cards adicionados por JS -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="promocoes" class="section dark">
+                <div class="container">
+                    <h2>Melhores Promoções</h2>
+                    <div class="filters">
+                        <input id="searchInput" placeholder="Pesquisar jogos" />
+                        <select id="genreFilter"><option value="">Todos gêneros</option></select>
+                        <select id="priceFilter"><option value="">Qualquer preço</option><option value="0-20">Até R$20</option><option value="20-50">R$20–50</option><option value="50+">Acima de R$50</option></select>
+                    </div>
+                    <div class="grid" id="deals">
+                        <!-- Cards adicionados por JS -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="noticias" class="section">
+                <div class="container">
+                    <h2>Últimas Notícias</h2>
+                    <div id="newsList">
+                        <!-- Notícias por JS -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="newsletter" class="section dark small">
+                <div class="container">
+                    <h3>Receba alertas por e-mail</h3>
+                    <form id="newsletterForm">
+                        <input type="email" id="newsletterEmail" placeholder="seu@email.com" required />
+                        <button class="btn btn-primary">Inscrever</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="contato" class="section">
+                <div class="container">
+                    <h2>Contato</h2>
+                    <form id="contactForm">
+                        <input type="text" id="name" placeholder="Seu nome" required />
+                        <input type="email" id="email" placeholder="Seu e-mail" required />
+                        <textarea id="message" placeholder="Mensagem" required></textarea>
+                        <button class="btn btn-primary">Enviar</button>
+                    </form>
+                    <div class="socials">
+                        <a href="#">WhatsApp</a> • <a href="#">Discord</a> • <a href="#">Twitter</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div>© 2026 GamePromo BR</div>
+                <div>Espaços para anúncios e afiliados</div>
+            </div>
+        </footer>
+    </div>
+
+        <!-- Google Analytics placeholder (substitua com seu ID) -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments)}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXX');
+        </script> -->
+        <script src="assets/js/app.js"></script>
+</body>
+</html>

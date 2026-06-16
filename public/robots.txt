@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Sitemap: /sitemap.xml
+
+# Crawl-delay and basic rules
+Crawl-delay: 5
+
+User-agent: Googlebot
+Allow: /

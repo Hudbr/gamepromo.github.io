@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Deal {
+  id    Int     @id @default(autoincrement())
+  title String
+  genre String?
+  platform String?
+  cover String?
+  affiliateLink String?
+  originalPrice Float?
+  price Float
+  discount Int?
+  createdAt DateTime @default(now())
+}
+
+model FreeGame {
+  id Int @id @default(autoincrement())
+  title String
+  platform String
+  excerpt String?
+  expires DateTime?
+}
+
+model News {
+  id Int @id @default(autoincrement())
+  title String
+  excerpt String?
+  category String?
+  publishedAt DateTime?
+}
+
+model Subscriber {
+  id Int @id @default(autoincrement())
+  email String @unique
+  createdAt DateTime @default(now())
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  email String @unique
+  name String?
+  role String @default("editor")
+}

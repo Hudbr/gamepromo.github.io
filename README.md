@@ -66,3 +66,46 @@ Recomendações de deploy:
 - Configure CDN (Cloudflare) para otimizar imagens e cache.
  - O projeto agora gera imagens OG dinâmicas via `GET /api/og/deal/[id]?title=...&subtitle=...&price=...` usando `@vercel/og`.
  - As imagens são renderizadas como PNG estilo social preview 1200x630 para melhor compartilhamento.
+
+## Como rodar localmente (passo-a-passo)
+
+1. Clone o repositório e entre na pasta do projeto.
+
+2. Instale dependências:
+
+```bash
+npm install
+```
+
+3. Copie o arquivo de exemplo de variáveis de ambiente e preencha os valores:
+
+```bash
+cp .env.example .env.local
+# abra .env.local e preencha SANITY, AUTH0, DATABASE_URL, NEXT_PUBLIC_GA_ID, NEXT_PUBLIC_SITE_URL
+```
+
+4. Gere o cliente Prisma, rode migrações e seed:
+
+```bash
+npm run prisma:generate
+npm run prisma:migrate
+npm run seed
+```
+
+5. Rode a aplicação em desenvolvimento:
+
+```bash
+npm run dev
+```
+
+6. Testes rápidos:
+
+- Acesse `http://localhost:3000` para ver o site.
+- Acesse `http://localhost:3000/promocoes` e `http://localhost:3000/deal/11` (ajuste id conforme seed).
+- Verifique `http://localhost:3000/api/og/deal/11?title=...` para ver a imagem OG gerada.
+
+### Notas adicionais
+
+- Sanity: crie um projeto Sanity e publique schemas em seu Studio para gerenciar `freeGame`, `deal` e `news`.
+- Auth0: configure a aplicação em Auth0 e preencha as variáveis no `.env.local`.
+- Deploy: recomendo Vercel; defina as variáveis de ambiente no painel e ative o build.
